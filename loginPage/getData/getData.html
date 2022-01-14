@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>getData</title>
+    <link rel="stylesheet" href="getData.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        var url = "getData.js";
+        $.getScript(url);
+    </script>
+</head>
+<body>
+<div class="imgcontainer">
+    <img src="/loginPage/getData/logo.jpg">
+</div>
+<div style="text-align:center">
+    <input type='file' class='chooseFile' accept='text/plain' onchange='openFile()'><br>
+    <div id='output' style="display: none">****************************</div>
+</div>
+<!--<form>-->
+<!--    <div class="container">-->
+<!--        <div style="width: 100%">-->
+<!--            <input style="width: 30%; border-radius: 10px" name="filePath" type="text" placeholder="file name:">-->
+<!--        </div>-->
+<!--        <button type="button" onclick="readTextFile(filePath)">read</button>-->
+<!--    </div>-->
+<!--</form>-->
+<div class="buttonContainer">
+    <form class="getInfoForm">
+        <div>
+            <input style="width: 25%;height: 10%; border-radius: 10px" type="text" placeholder="enter url" name="url" required>
+            <input style="width: 5%;height: 10%; border-radius: 10px" type="text" placeholder="time(milisec)" name="time" required>
+            <div class="container">
+                <button type="button" onclick="getInformation(url, time)">GET INFORMATION</button>
+            </div>
+        </div>
+    </form>
+    <div class="container">
+        <button type="button" onclick="pauseLogging()">pause</button>
+    </div>
+    <div class="container">
+        <button type="button" onclick="stopLogging()">stop</button>
+    </div>
+    <div class="container">
+        <button type="button" onclick="createTable()">Create Table (Before Export)</button>
+    </div>
+    <div class="container">
+        <button id="btnExport" onclick="fnExcelReport()">EXPORT EXCEL FILE</button>
+    </div>
+</div>
+
+
+<div id="myDynamicTable" class="table-wrapper"></div>
+<iframe id="txtArea1" style="display:none"></iframe>
+
+<!--<input id="foo">-->
+
+</body>
+</html>

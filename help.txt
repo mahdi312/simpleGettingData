@@ -1,0 +1,3 @@
+please go to the last directory before simpleGettingData and run this command on your Terminal:
+command:
+ http-server ./simpleGettingData -o index.html
